@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>My first HTML page</title>
+  </head>
+  <body>
+    <p><font size="8">This is a visualization of pets</font></p>
+
+    <svg width="400" height="200" style="border: solid 1px black;">
+      <rect
+        id="bar0"
+        x="50"
+        y="50"
+        width="20"
+        height="80"
+        fill="#ffeda0"
+      ></rect>
+      <rect
+        id="bar1"
+        x="80"
+        y="50"
+        width="20"
+        height="80"
+        fill="#feb24c"
+      ></rect>
+      <rect
+        id="bar2"
+        x="110"
+        y="50"
+        width="20"
+        height="80"
+        fill="#f03b20"
+      ></rect>
+
+      <line x1="40" x2="140" y1="152" y2="152" stroke="black"></line>
+
+      <text x="50" y="162" style="font-size: 10px;">cats</text>
+      <text x="80" y="162" style="font-size: 10px;">dogs</text>
+      <text x="110" y="162" style="font-size: 10px;">iguanas</text>
+    </svg>
+
+    <script type="text/javascript">
+      var pets = [45, 21, 102];
+
+      for (var i = 0; i < pets.length; i++) {
+        var bar = document.getElementById("bar" + i);
+        bar.setAttribute("height", pets[i]);
+        bar.setAttribute("y", 152 - pets[i]);
+      }
+    </script>
+  </body>
+</html>
